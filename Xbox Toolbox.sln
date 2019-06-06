@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xbox Toolbox", "Xbox Toolbox\Xbox Toolbox.csproj", "{DC37FF7E-4AD5-4F0E-8BBA-4154648996EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC37FF7E-4AD5-4F0E-8BBA-4154648996EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC37FF7E-4AD5-4F0E-8BBA-4154648996EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC37FF7E-4AD5-4F0E-8BBA-4154648996EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC37FF7E-4AD5-4F0E-8BBA-4154648996EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DED26B5-0C09-4D1D-B56E-D854B94B06C8}
+	EndGlobalSection
+EndGlobal
