@@ -169,12 +169,12 @@ namespace Xbox_Toolbox {
             byte[] RPC = new byte[] { 0x38, 0x00, 0x00, 0x71, 0x44, 0x00, 0x00, 0x02, 0x4E, 0x80, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00 };
             XDRPCReference Call = xbCon.AllocateRPC(16);
 
-            xbCon.DebugTarget.SetMemory(Call.Pointer, 16, RPC, out outInt);
-            UInt64 CPU1 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, Call.Pointer), new object[] { 0x48565050, 3, 0x8000020000020600 });
-            UInt64 CPU2 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, Call.Pointer), new object[] { 0x48565050, 3, 0x8000020000020800 });
-            UInt64 CPU3 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, Call.Pointer), new object[] { 0x48565050, 3, 0x8000020000020A00 });
-            UInt64 CPU4 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, Call.Pointer), new object[] { 0x48565050, 3, 0x8000020000020C00 });
-            Call.Free();
+            xbCon.DebugTarget.SetMemory(0x81B44688, 16, RPC, out outInt);
+            UInt64 CPU1 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, 0x81B44688), new object[] { 0x48565050, 3, 0x8000020000020600 });
+            UInt64 CPU2 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, 0x81B44688), new object[] { 0x48565050, 3, 0x8000020000020800 });
+            UInt64 CPU3 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, 0x81B44688), new object[] { 0x48565050, 3, 0x8000020000020A00 });
+            UInt64 CPU4 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, 0x81B44688), new object[] { 0x48565050, 3, 0x8000020000020C00 });
+            xbCon.DebugTarget.SetMemory(0x81B44688, 16, new byte[16], out outInt);
 
             return String.Format("{0}{1}", (CPU1 | CPU2).ToString("X8"), (CPU3 | CPU4).ToString("X8"));
         }

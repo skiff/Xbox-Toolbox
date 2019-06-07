@@ -47,7 +47,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="xdevkit">
-      <HintPath>..\..\..\..\Documents\Visual Studio References\xdevkit.dll</HintPath>
+      <HintPath>..\..\..\references\xdevkit.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="xdrpc">
