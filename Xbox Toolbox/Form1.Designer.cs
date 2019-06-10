@@ -39,10 +39,16 @@
             this.UnloadColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FunctionsTab = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CallAddressReturnTextBox = new System.Windows.Forms.TextBox();
+            this.CallFunctionButton = new System.Windows.Forms.Button();
+            this.CallByAddressReturnType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CallAddressTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ByOridinalReturnValueTextBox = new System.Windows.Forms.TextBox();
             this.CallByOrdinalButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CallByOrdinalReturnTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ByOrdinalReturnLabel = new System.Windows.Forms.Label();
             this.OrdinalLabel = new System.Windows.Forms.Label();
             this.ModuleNameLabel = new System.Windows.Forms.Label();
@@ -84,20 +90,28 @@
             this.CPUKeyHeaderLabel = new System.Windows.Forms.Label();
             this.ConnectionStatusLabel = new System.Windows.Forms.Label();
             this.ConsoleDebugIPLabel = new System.Windows.Forms.Label();
+            this.MemoryViewHexBox = new Be.Windows.Forms.HexBox();
+            this.MemoryAddressTextBox = new System.Windows.Forms.TextBox();
+            this.MemoryAddressLabel = new System.Windows.Forms.Label();
+            this.MemorySizeLabel = new System.Windows.Forms.Label();
+            this.MemorySizeTextBox = new System.Windows.Forms.TextBox();
+            this.PeekMemoryButton = new System.Windows.Forms.Button();
+            this.PokeMemoryButton = new System.Windows.Forms.Button();
             this.MainTabControl.SuspendLayout();
             this.ModuleTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.FunctionsTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PPCTab.SuspendLayout();
+            this.MemoryTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(14, 8);
-            this.ConnectButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConnectButton.Location = new System.Drawing.Point(21, 12);
             this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(231, 38);
+            this.ConnectButton.Size = new System.Drawing.Size(346, 58);
             this.ConnectButton.TabIndex = 0;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
@@ -105,10 +119,9 @@
             // 
             // RebootButton
             // 
-            this.RebootButton.Location = new System.Drawing.Point(249, 8);
-            this.RebootButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RebootButton.Location = new System.Drawing.Point(374, 12);
             this.RebootButton.Name = "RebootButton";
-            this.RebootButton.Size = new System.Drawing.Size(226, 38);
+            this.RebootButton.Size = new System.Drawing.Size(339, 58);
             this.RebootButton.TabIndex = 1;
             this.RebootButton.Text = "Reboot";
             this.RebootButton.UseVisualStyleBackColor = true;
@@ -117,10 +130,9 @@
             // SourceLinkLabel
             // 
             this.SourceLinkLabel.AutoSize = true;
-            this.SourceLinkLabel.Location = new System.Drawing.Point(510, 20);
-            this.SourceLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SourceLinkLabel.Location = new System.Drawing.Point(765, 31);
             this.SourceLinkLabel.Name = "SourceLinkLabel";
-            this.SourceLinkLabel.Size = new System.Drawing.Size(41, 13);
+            this.SourceLinkLabel.Size = new System.Drawing.Size(60, 20);
             this.SourceLinkLabel.TabIndex = 3;
             this.SourceLinkLabel.TabStop = true;
             this.SourceLinkLabel.Text = "Source";
@@ -131,11 +143,10 @@
             this.MainTabControl.Controls.Add(this.FunctionsTab);
             this.MainTabControl.Controls.Add(this.PPCTab);
             this.MainTabControl.Controls.Add(this.MemoryTab);
-            this.MainTabControl.Location = new System.Drawing.Point(9, 86);
-            this.MainTabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainTabControl.Location = new System.Drawing.Point(14, 132);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(579, 408);
+            this.MainTabControl.Size = new System.Drawing.Size(868, 628);
             this.MainTabControl.TabIndex = 4;
             this.MainTabControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainTabControl_KeyDown);
             // 
@@ -145,21 +156,19 @@
             this.ModuleTab.Controls.Add(this.LoadModuleButton);
             this.ModuleTab.Controls.Add(this.ModulePathTextBox);
             this.ModuleTab.Controls.Add(this.dataGridView1);
-            this.ModuleTab.Location = new System.Drawing.Point(4, 22);
-            this.ModuleTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModuleTab.Location = new System.Drawing.Point(4, 29);
             this.ModuleTab.Name = "ModuleTab";
-            this.ModuleTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ModuleTab.Size = new System.Drawing.Size(571, 382);
+            this.ModuleTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ModuleTab.Size = new System.Drawing.Size(860, 595);
             this.ModuleTab.TabIndex = 0;
             this.ModuleTab.Text = "Modules";
             this.ModuleTab.UseVisualStyleBackColor = true;
             // 
             // RefreshModulesButton
             // 
-            this.RefreshModulesButton.Location = new System.Drawing.Point(396, 359);
-            this.RefreshModulesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RefreshModulesButton.Location = new System.Drawing.Point(594, 552);
             this.RefreshModulesButton.Name = "RefreshModulesButton";
-            this.RefreshModulesButton.Size = new System.Drawing.Size(173, 22);
+            this.RefreshModulesButton.Size = new System.Drawing.Size(260, 34);
             this.RefreshModulesButton.TabIndex = 3;
             this.RefreshModulesButton.Text = "Refresh Module List";
             this.RefreshModulesButton.UseVisualStyleBackColor = true;
@@ -167,10 +176,9 @@
             // 
             // LoadModuleButton
             // 
-            this.LoadModuleButton.Location = new System.Drawing.Point(219, 359);
-            this.LoadModuleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LoadModuleButton.Location = new System.Drawing.Point(328, 552);
             this.LoadModuleButton.Name = "LoadModuleButton";
-            this.LoadModuleButton.Size = new System.Drawing.Size(173, 22);
+            this.LoadModuleButton.Size = new System.Drawing.Size(260, 34);
             this.LoadModuleButton.TabIndex = 2;
             this.LoadModuleButton.Text = "Load Module";
             this.LoadModuleButton.UseVisualStyleBackColor = true;
@@ -178,10 +186,9 @@
             // 
             // ModulePathTextBox
             // 
-            this.ModulePathTextBox.Location = new System.Drawing.Point(5, 360);
-            this.ModulePathTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModulePathTextBox.Location = new System.Drawing.Point(8, 554);
             this.ModulePathTextBox.Name = "ModulePathTextBox";
-            this.ModulePathTextBox.Size = new System.Drawing.Size(211, 20);
+            this.ModulePathTextBox.Size = new System.Drawing.Size(314, 26);
             this.ModulePathTextBox.TabIndex = 1;
             // 
             // dataGridView1
@@ -194,13 +201,12 @@
             this.BaseAddressColumn,
             this.SizeColumn,
             this.UnloadColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(5, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(565, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(848, 535);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -258,125 +264,178 @@
             this.FunctionsTab.Controls.Add(this.Param3TextBox);
             this.FunctionsTab.Controls.Add(this.Param2TextBox);
             this.FunctionsTab.Controls.Add(this.Param1TextBox);
-            this.FunctionsTab.Location = new System.Drawing.Point(4, 22);
-            this.FunctionsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FunctionsTab.Location = new System.Drawing.Point(4, 29);
             this.FunctionsTab.Name = "FunctionsTab";
-            this.FunctionsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.FunctionsTab.Size = new System.Drawing.Size(571, 382);
+            this.FunctionsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.FunctionsTab.Size = new System.Drawing.Size(860, 595);
             this.FunctionsTab.TabIndex = 1;
             this.FunctionsTab.Text = "Functions";
             this.FunctionsTab.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(297, 224);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Controls.Add(this.CallAddressReturnTextBox);
+            this.groupBox2.Controls.Add(this.CallFunctionButton);
+            this.groupBox2.Controls.Add(this.CallByAddressReturnType);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.CallAddressTextBox);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(446, 345);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(272, 142);
+            this.groupBox2.Size = new System.Drawing.Size(408, 206);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Call By Address";
+            // 
+            // CallAddressReturnTextBox
+            // 
+            this.CallAddressReturnTextBox.Location = new System.Drawing.Point(8, 160);
+            this.CallAddressReturnTextBox.Name = "CallAddressReturnTextBox";
+            this.CallAddressReturnTextBox.Size = new System.Drawing.Size(392, 26);
+            this.CallAddressReturnTextBox.TabIndex = 11;
+            // 
+            // CallFunctionButton
+            // 
+            this.CallFunctionButton.Location = new System.Drawing.Point(6, 109);
+            this.CallFunctionButton.Name = "CallFunctionButton";
+            this.CallFunctionButton.Size = new System.Drawing.Size(396, 32);
+            this.CallFunctionButton.TabIndex = 10;
+            this.CallFunctionButton.Text = "Call Function";
+            this.CallFunctionButton.UseVisualStyleBackColor = true;
+            this.CallFunctionButton.Click += new System.EventHandler(this.CallFunctionButton_Click);
+            // 
+            // CallByAddressReturnType
+            // 
+            this.CallByAddressReturnType.FormattingEnabled = true;
+            this.CallByAddressReturnType.Items.AddRange(new object[] {
+            "void",
+            "long",
+            "string",
+            "float"});
+            this.CallByAddressReturnType.Location = new System.Drawing.Point(130, 67);
+            this.CallByAddressReturnType.Name = "CallByAddressReturnType";
+            this.CallByAddressReturnType.Size = new System.Drawing.Size(270, 28);
+            this.CallByAddressReturnType.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Return Type";
+            // 
+            // CallAddressTextBox
+            // 
+            this.CallAddressTextBox.Location = new System.Drawing.Point(130, 25);
+            this.CallAddressTextBox.Name = "CallAddressTextBox";
+            this.CallAddressTextBox.Size = new System.Drawing.Size(270, 26);
+            this.CallAddressTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Address";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ByOridinalReturnValueTextBox);
             this.groupBox1.Controls.Add(this.CallByOrdinalButton);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.CallByOrdinalReturnTypeComboBox);
             this.groupBox1.Controls.Add(this.ByOrdinalReturnLabel);
             this.groupBox1.Controls.Add(this.OrdinalLabel);
             this.groupBox1.Controls.Add(this.ModuleNameLabel);
             this.groupBox1.Controls.Add(this.OrdinalTextBox);
             this.groupBox1.Controls.Add(this.ModuleNameTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(4, 222);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(6, 342);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(272, 161);
+            this.groupBox1.Size = new System.Drawing.Size(408, 248);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Call By Ordinal";
             // 
             // ByOridinalReturnValueTextBox
             // 
-            this.ByOridinalReturnValueTextBox.Location = new System.Drawing.Point(5, 131);
-            this.ByOridinalReturnValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ByOridinalReturnValueTextBox.Location = new System.Drawing.Point(8, 202);
             this.ByOridinalReturnValueTextBox.Name = "ByOridinalReturnValueTextBox";
-            this.ByOridinalReturnValueTextBox.Size = new System.Drawing.Size(263, 20);
+            this.ByOridinalReturnValueTextBox.Size = new System.Drawing.Size(392, 26);
             this.ByOridinalReturnValueTextBox.TabIndex = 7;
             // 
             // CallByOrdinalButton
             // 
-            this.CallByOrdinalButton.Location = new System.Drawing.Point(4, 98);
-            this.CallByOrdinalButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CallByOrdinalButton.Location = new System.Drawing.Point(6, 151);
             this.CallByOrdinalButton.Name = "CallByOrdinalButton";
-            this.CallByOrdinalButton.Size = new System.Drawing.Size(264, 21);
+            this.CallByOrdinalButton.Size = new System.Drawing.Size(396, 32);
             this.CallByOrdinalButton.TabIndex = 6;
             this.CallByOrdinalButton.Text = "Call Function";
             this.CallByOrdinalButton.UseVisualStyleBackColor = true;
+            this.CallByOrdinalButton.Click += new System.EventHandler(this.CallByOrdinalButton_Click);
             // 
-            // comboBox1
+            // CallByOrdinalReturnTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(91, 71);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 21);
-            this.comboBox1.TabIndex = 5;
+            this.CallByOrdinalReturnTypeComboBox.FormattingEnabled = true;
+            this.CallByOrdinalReturnTypeComboBox.Items.AddRange(new object[] {
+            "void",
+            "long",
+            "string",
+            "float"});
+            this.CallByOrdinalReturnTypeComboBox.Location = new System.Drawing.Point(136, 109);
+            this.CallByOrdinalReturnTypeComboBox.Name = "CallByOrdinalReturnTypeComboBox";
+            this.CallByOrdinalReturnTypeComboBox.Size = new System.Drawing.Size(264, 28);
+            this.CallByOrdinalReturnTypeComboBox.TabIndex = 5;
             // 
             // ByOrdinalReturnLabel
             // 
             this.ByOrdinalReturnLabel.AutoSize = true;
-            this.ByOrdinalReturnLabel.Location = new System.Drawing.Point(7, 73);
-            this.ByOrdinalReturnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ByOrdinalReturnLabel.Location = new System.Drawing.Point(10, 112);
             this.ByOrdinalReturnLabel.Name = "ByOrdinalReturnLabel";
-            this.ByOrdinalReturnLabel.Size = new System.Drawing.Size(66, 13);
+            this.ByOrdinalReturnLabel.Size = new System.Drawing.Size(96, 20);
             this.ByOrdinalReturnLabel.TabIndex = 4;
             this.ByOrdinalReturnLabel.Text = "Return Type";
             // 
             // OrdinalLabel
             // 
             this.OrdinalLabel.AutoSize = true;
-            this.OrdinalLabel.Location = new System.Drawing.Point(5, 45);
-            this.OrdinalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OrdinalLabel.Location = new System.Drawing.Point(8, 69);
             this.OrdinalLabel.Name = "OrdinalLabel";
-            this.OrdinalLabel.Size = new System.Drawing.Size(40, 13);
+            this.OrdinalLabel.Size = new System.Drawing.Size(59, 20);
             this.OrdinalLabel.TabIndex = 3;
             this.OrdinalLabel.Text = "Ordinal";
             // 
             // ModuleNameLabel
             // 
             this.ModuleNameLabel.AutoSize = true;
-            this.ModuleNameLabel.Location = new System.Drawing.Point(5, 20);
-            this.ModuleNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ModuleNameLabel.Location = new System.Drawing.Point(8, 31);
             this.ModuleNameLabel.Name = "ModuleNameLabel";
-            this.ModuleNameLabel.Size = new System.Drawing.Size(73, 13);
+            this.ModuleNameLabel.Size = new System.Drawing.Size(107, 20);
             this.ModuleNameLabel.TabIndex = 2;
             this.ModuleNameLabel.Text = "Module Name";
             // 
             // OrdinalTextBox
             // 
-            this.OrdinalTextBox.Location = new System.Drawing.Point(91, 43);
-            this.OrdinalTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrdinalTextBox.Location = new System.Drawing.Point(136, 66);
             this.OrdinalTextBox.Name = "OrdinalTextBox";
-            this.OrdinalTextBox.Size = new System.Drawing.Size(177, 20);
+            this.OrdinalTextBox.Size = new System.Drawing.Size(264, 26);
             this.OrdinalTextBox.TabIndex = 1;
             // 
             // ModuleNameTextBox
             // 
-            this.ModuleNameTextBox.Location = new System.Drawing.Point(91, 17);
-            this.ModuleNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModuleNameTextBox.Location = new System.Drawing.Point(136, 26);
             this.ModuleNameTextBox.Name = "ModuleNameTextBox";
-            this.ModuleNameTextBox.Size = new System.Drawing.Size(177, 20);
+            this.ModuleNameTextBox.Size = new System.Drawing.Size(264, 26);
             this.ModuleNameTextBox.TabIndex = 0;
             // 
             // Param8CheckBox
             // 
             this.Param8CheckBox.AutoSize = true;
-            this.Param8CheckBox.Location = new System.Drawing.Point(469, 190);
-            this.Param8CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param8CheckBox.Location = new System.Drawing.Point(704, 292);
             this.Param8CheckBox.Name = "Param8CheckBox";
-            this.Param8CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param8CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param8CheckBox.TabIndex = 23;
             this.Param8CheckBox.Text = "Send Parameter";
             this.Param8CheckBox.UseVisualStyleBackColor = true;
@@ -384,10 +443,9 @@
             // Param7CheckBox
             // 
             this.Param7CheckBox.AutoSize = true;
-            this.Param7CheckBox.Location = new System.Drawing.Point(469, 164);
-            this.Param7CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param7CheckBox.Location = new System.Drawing.Point(704, 252);
             this.Param7CheckBox.Name = "Param7CheckBox";
-            this.Param7CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param7CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param7CheckBox.TabIndex = 22;
             this.Param7CheckBox.Text = "Send Parameter";
             this.Param7CheckBox.UseVisualStyleBackColor = true;
@@ -395,10 +453,9 @@
             // Param6CheckBox
             // 
             this.Param6CheckBox.AutoSize = true;
-            this.Param6CheckBox.Location = new System.Drawing.Point(469, 138);
-            this.Param6CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param6CheckBox.Location = new System.Drawing.Point(704, 212);
             this.Param6CheckBox.Name = "Param6CheckBox";
-            this.Param6CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param6CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param6CheckBox.TabIndex = 21;
             this.Param6CheckBox.Text = "Send Parameter";
             this.Param6CheckBox.UseVisualStyleBackColor = true;
@@ -406,10 +463,9 @@
             // Param5CheckBox
             // 
             this.Param5CheckBox.AutoSize = true;
-            this.Param5CheckBox.Location = new System.Drawing.Point(469, 112);
-            this.Param5CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param5CheckBox.Location = new System.Drawing.Point(704, 172);
             this.Param5CheckBox.Name = "Param5CheckBox";
-            this.Param5CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param5CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param5CheckBox.TabIndex = 20;
             this.Param5CheckBox.Text = "Send Parameter";
             this.Param5CheckBox.UseVisualStyleBackColor = true;
@@ -417,10 +473,9 @@
             // Param4CheckBox
             // 
             this.Param4CheckBox.AutoSize = true;
-            this.Param4CheckBox.Location = new System.Drawing.Point(469, 86);
-            this.Param4CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param4CheckBox.Location = new System.Drawing.Point(704, 132);
             this.Param4CheckBox.Name = "Param4CheckBox";
-            this.Param4CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param4CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param4CheckBox.TabIndex = 19;
             this.Param4CheckBox.Text = "Send Parameter";
             this.Param4CheckBox.UseVisualStyleBackColor = true;
@@ -428,10 +483,9 @@
             // Param3CheckBox
             // 
             this.Param3CheckBox.AutoSize = true;
-            this.Param3CheckBox.Location = new System.Drawing.Point(469, 60);
-            this.Param3CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param3CheckBox.Location = new System.Drawing.Point(704, 92);
             this.Param3CheckBox.Name = "Param3CheckBox";
-            this.Param3CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param3CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param3CheckBox.TabIndex = 18;
             this.Param3CheckBox.Text = "Send Parameter";
             this.Param3CheckBox.UseVisualStyleBackColor = true;
@@ -439,10 +493,9 @@
             // Param2CheckBox
             // 
             this.Param2CheckBox.AutoSize = true;
-            this.Param2CheckBox.Location = new System.Drawing.Point(469, 34);
-            this.Param2CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param2CheckBox.Location = new System.Drawing.Point(704, 52);
             this.Param2CheckBox.Name = "Param2CheckBox";
-            this.Param2CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param2CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param2CheckBox.TabIndex = 17;
             this.Param2CheckBox.Text = "Send Parameter";
             this.Param2CheckBox.UseVisualStyleBackColor = true;
@@ -450,10 +503,9 @@
             // Param1CheckBox
             // 
             this.Param1CheckBox.AutoSize = true;
-            this.Param1CheckBox.Location = new System.Drawing.Point(469, 8);
-            this.Param1CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param1CheckBox.Location = new System.Drawing.Point(704, 12);
             this.Param1CheckBox.Name = "Param1CheckBox";
-            this.Param1CheckBox.Size = new System.Drawing.Size(102, 17);
+            this.Param1CheckBox.Size = new System.Drawing.Size(151, 24);
             this.Param1CheckBox.TabIndex = 16;
             this.Param1CheckBox.Text = "Send Parameter";
             this.Param1CheckBox.UseVisualStyleBackColor = true;
@@ -465,10 +517,9 @@
             "long",
             "string",
             "float"});
-            this.Param8ComboBox.Location = new System.Drawing.Point(326, 188);
-            this.Param8ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param8ComboBox.Location = new System.Drawing.Point(489, 289);
             this.Param8ComboBox.Name = "Param8ComboBox";
-            this.Param8ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param8ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param8ComboBox.TabIndex = 15;
             // 
             // Param7ComboBox
@@ -478,10 +529,9 @@
             "long",
             "string",
             "float"});
-            this.Param7ComboBox.Location = new System.Drawing.Point(326, 162);
-            this.Param7ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param7ComboBox.Location = new System.Drawing.Point(489, 249);
             this.Param7ComboBox.Name = "Param7ComboBox";
-            this.Param7ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param7ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param7ComboBox.TabIndex = 14;
             // 
             // Param6ComboBox
@@ -491,10 +541,9 @@
             "long",
             "string",
             "float"});
-            this.Param6ComboBox.Location = new System.Drawing.Point(326, 136);
-            this.Param6ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param6ComboBox.Location = new System.Drawing.Point(489, 209);
             this.Param6ComboBox.Name = "Param6ComboBox";
-            this.Param6ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param6ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param6ComboBox.TabIndex = 13;
             // 
             // Param5ComboBox
@@ -504,10 +553,9 @@
             "long",
             "string",
             "float"});
-            this.Param5ComboBox.Location = new System.Drawing.Point(326, 110);
-            this.Param5ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param5ComboBox.Location = new System.Drawing.Point(489, 169);
             this.Param5ComboBox.Name = "Param5ComboBox";
-            this.Param5ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param5ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param5ComboBox.TabIndex = 12;
             // 
             // Param4ComboBox
@@ -517,10 +565,9 @@
             "long",
             "string",
             "float"});
-            this.Param4ComboBox.Location = new System.Drawing.Point(326, 84);
-            this.Param4ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param4ComboBox.Location = new System.Drawing.Point(489, 129);
             this.Param4ComboBox.Name = "Param4ComboBox";
-            this.Param4ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param4ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param4ComboBox.TabIndex = 11;
             // 
             // Param3ComboBox
@@ -530,10 +577,9 @@
             "long",
             "string",
             "float"});
-            this.Param3ComboBox.Location = new System.Drawing.Point(326, 58);
-            this.Param3ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param3ComboBox.Location = new System.Drawing.Point(489, 89);
             this.Param3ComboBox.Name = "Param3ComboBox";
-            this.Param3ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param3ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param3ComboBox.TabIndex = 10;
             // 
             // Param2ComboBox
@@ -543,10 +589,9 @@
             "long",
             "string",
             "float"});
-            this.Param2ComboBox.Location = new System.Drawing.Point(326, 32);
-            this.Param2ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param2ComboBox.Location = new System.Drawing.Point(489, 49);
             this.Param2ComboBox.Name = "Param2ComboBox";
-            this.Param2ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param2ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param2ComboBox.TabIndex = 9;
             // 
             // Param1ComboBox
@@ -556,74 +601,65 @@
             "long",
             "string",
             "float"});
-            this.Param1ComboBox.Location = new System.Drawing.Point(326, 6);
-            this.Param1ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param1ComboBox.Location = new System.Drawing.Point(489, 9);
             this.Param1ComboBox.Name = "Param1ComboBox";
-            this.Param1ComboBox.Size = new System.Drawing.Size(139, 21);
+            this.Param1ComboBox.Size = new System.Drawing.Size(206, 28);
             this.Param1ComboBox.TabIndex = 8;
             // 
             // Param8TextBox
             // 
-            this.Param8TextBox.Location = new System.Drawing.Point(4, 188);
-            this.Param8TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param8TextBox.Location = new System.Drawing.Point(6, 289);
             this.Param8TextBox.Name = "Param8TextBox";
-            this.Param8TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param8TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param8TextBox.TabIndex = 7;
             // 
             // Param7TextBox
             // 
-            this.Param7TextBox.Location = new System.Drawing.Point(4, 162);
-            this.Param7TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param7TextBox.Location = new System.Drawing.Point(6, 249);
             this.Param7TextBox.Name = "Param7TextBox";
-            this.Param7TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param7TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param7TextBox.TabIndex = 6;
             // 
             // Param6TextBox
             // 
-            this.Param6TextBox.Location = new System.Drawing.Point(4, 136);
-            this.Param6TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param6TextBox.Location = new System.Drawing.Point(6, 209);
             this.Param6TextBox.Name = "Param6TextBox";
-            this.Param6TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param6TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param6TextBox.TabIndex = 5;
             // 
             // Param5TextBox
             // 
-            this.Param5TextBox.Location = new System.Drawing.Point(4, 110);
-            this.Param5TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param5TextBox.Location = new System.Drawing.Point(6, 169);
             this.Param5TextBox.Name = "Param5TextBox";
-            this.Param5TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param5TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param5TextBox.TabIndex = 4;
             // 
             // Param4TextBox
             // 
-            this.Param4TextBox.Location = new System.Drawing.Point(4, 84);
-            this.Param4TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param4TextBox.Location = new System.Drawing.Point(6, 129);
             this.Param4TextBox.Name = "Param4TextBox";
-            this.Param4TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param4TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param4TextBox.TabIndex = 3;
             // 
             // Param3TextBox
             // 
-            this.Param3TextBox.Location = new System.Drawing.Point(4, 58);
-            this.Param3TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param3TextBox.Location = new System.Drawing.Point(6, 89);
             this.Param3TextBox.Name = "Param3TextBox";
-            this.Param3TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param3TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param3TextBox.TabIndex = 2;
             // 
             // Param2TextBox
             // 
-            this.Param2TextBox.Location = new System.Drawing.Point(4, 32);
-            this.Param2TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param2TextBox.Location = new System.Drawing.Point(6, 49);
             this.Param2TextBox.Name = "Param2TextBox";
-            this.Param2TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param2TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param2TextBox.TabIndex = 1;
             // 
             // Param1TextBox
             // 
-            this.Param1TextBox.Location = new System.Drawing.Point(4, 6);
-            this.Param1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Param1TextBox.Location = new System.Drawing.Point(6, 9);
             this.Param1TextBox.Name = "Param1TextBox";
-            this.Param1TextBox.Size = new System.Drawing.Size(319, 20);
+            this.Param1TextBox.Size = new System.Drawing.Size(476, 26);
             this.Param1TextBox.TabIndex = 0;
             // 
             // PPCTab
@@ -633,30 +669,27 @@
             this.PPCTab.Controls.Add(this.CompileInstructionsButton);
             this.PPCTab.Controls.Add(this.BinaryTextBox);
             this.PPCTab.Controls.Add(this.InstructionsTextBox);
-            this.PPCTab.Location = new System.Drawing.Point(4, 22);
-            this.PPCTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PPCTab.Location = new System.Drawing.Point(4, 29);
             this.PPCTab.Name = "PPCTab";
-            this.PPCTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PPCTab.Size = new System.Drawing.Size(571, 382);
+            this.PPCTab.Padding = new System.Windows.Forms.Padding(3);
+            this.PPCTab.Size = new System.Drawing.Size(860, 595);
             this.PPCTab.TabIndex = 2;
             this.PPCTab.Text = "PowerPC";
             this.PPCTab.UseVisualStyleBackColor = true;
             // 
             // InjectionAddressTextBox
             // 
-            this.InjectionAddressTextBox.Location = new System.Drawing.Point(263, 332);
-            this.InjectionAddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InjectionAddressTextBox.Location = new System.Drawing.Point(394, 511);
             this.InjectionAddressTextBox.Name = "InjectionAddressTextBox";
-            this.InjectionAddressTextBox.Size = new System.Drawing.Size(301, 20);
+            this.InjectionAddressTextBox.Size = new System.Drawing.Size(450, 26);
             this.InjectionAddressTextBox.TabIndex = 4;
             this.InjectionAddressTextBox.Text = "0x0";
             // 
             // InjectCodeButton
             // 
-            this.InjectCodeButton.Location = new System.Drawing.Point(263, 359);
-            this.InjectCodeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InjectCodeButton.Location = new System.Drawing.Point(394, 552);
             this.InjectCodeButton.Name = "InjectCodeButton";
-            this.InjectCodeButton.Size = new System.Drawing.Size(300, 23);
+            this.InjectCodeButton.Size = new System.Drawing.Size(450, 35);
             this.InjectCodeButton.TabIndex = 3;
             this.InjectCodeButton.Text = "Inject PPC";
             this.InjectCodeButton.UseVisualStyleBackColor = true;
@@ -664,10 +697,9 @@
             // 
             // CompileInstructionsButton
             // 
-            this.CompileInstructionsButton.Location = new System.Drawing.Point(10, 359);
-            this.CompileInstructionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CompileInstructionsButton.Location = new System.Drawing.Point(15, 552);
             this.CompileInstructionsButton.Name = "CompileInstructionsButton";
-            this.CompileInstructionsButton.Size = new System.Drawing.Size(243, 23);
+            this.CompileInstructionsButton.Size = new System.Drawing.Size(364, 35);
             this.CompileInstructionsButton.TabIndex = 2;
             this.CompileInstructionsButton.Text = "Compile";
             this.CompileInstructionsButton.UseVisualStyleBackColor = true;
@@ -676,30 +708,34 @@
             // BinaryTextBox
             // 
             this.BinaryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinaryTextBox.Location = new System.Drawing.Point(263, 10);
-            this.BinaryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BinaryTextBox.Location = new System.Drawing.Point(394, 15);
             this.BinaryTextBox.Name = "BinaryTextBox";
-            this.BinaryTextBox.Size = new System.Drawing.Size(301, 312);
+            this.BinaryTextBox.Size = new System.Drawing.Size(450, 478);
             this.BinaryTextBox.TabIndex = 1;
             this.BinaryTextBox.Text = "";
             // 
             // InstructionsTextBox
             // 
             this.InstructionsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InstructionsTextBox.Location = new System.Drawing.Point(10, 10);
-            this.InstructionsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InstructionsTextBox.Location = new System.Drawing.Point(15, 15);
             this.InstructionsTextBox.Name = "InstructionsTextBox";
-            this.InstructionsTextBox.Size = new System.Drawing.Size(244, 347);
+            this.InstructionsTextBox.Size = new System.Drawing.Size(364, 532);
             this.InstructionsTextBox.TabIndex = 0;
             this.InstructionsTextBox.Text = "";
             // 
             // MemoryTab
             // 
-            this.MemoryTab.Location = new System.Drawing.Point(4, 22);
-            this.MemoryTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MemoryTab.Controls.Add(this.PokeMemoryButton);
+            this.MemoryTab.Controls.Add(this.PeekMemoryButton);
+            this.MemoryTab.Controls.Add(this.MemorySizeLabel);
+            this.MemoryTab.Controls.Add(this.MemorySizeTextBox);
+            this.MemoryTab.Controls.Add(this.MemoryAddressLabel);
+            this.MemoryTab.Controls.Add(this.MemoryAddressTextBox);
+            this.MemoryTab.Controls.Add(this.MemoryViewHexBox);
+            this.MemoryTab.Location = new System.Drawing.Point(4, 29);
             this.MemoryTab.Name = "MemoryTab";
-            this.MemoryTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MemoryTab.Size = new System.Drawing.Size(571, 382);
+            this.MemoryTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MemoryTab.Size = new System.Drawing.Size(860, 595);
             this.MemoryTab.TabIndex = 3;
             this.MemoryTab.Text = "Memory";
             this.MemoryTab.UseVisualStyleBackColor = true;
@@ -707,20 +743,18 @@
             // CPUKeyLabel
             // 
             this.CPUKeyLabel.AutoSize = true;
-            this.CPUKeyLabel.Location = new System.Drawing.Point(66, 71);
-            this.CPUKeyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CPUKeyLabel.Location = new System.Drawing.Point(99, 109);
             this.CPUKeyLabel.Name = "CPUKeyLabel";
-            this.CPUKeyLabel.Size = new System.Drawing.Size(199, 13);
+            this.CPUKeyLabel.Size = new System.Drawing.Size(297, 20);
             this.CPUKeyLabel.TabIndex = 5;
             this.CPUKeyLabel.Text = "00000000000000000000000000000000";
             this.CPUKeyLabel.Click += new System.EventHandler(this.CPUKeyLabel_Click);
             // 
             // TitleIDLabel
             // 
-            this.TitleIDLabel.Location = new System.Drawing.Point(358, 51);
-            this.TitleIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TitleIDLabel.Location = new System.Drawing.Point(537, 78);
             this.TitleIDLabel.Name = "TitleIDLabel";
-            this.TitleIDLabel.Size = new System.Drawing.Size(227, 13);
+            this.TitleIDLabel.Size = new System.Drawing.Size(340, 20);
             this.TitleIDLabel.TabIndex = 6;
             this.TitleIDLabel.Text = "Current Title ID: 0x00000000";
             this.TitleIDLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -728,38 +762,101 @@
             // CPUKeyHeaderLabel
             // 
             this.CPUKeyHeaderLabel.AutoSize = true;
-            this.CPUKeyHeaderLabel.Location = new System.Drawing.Point(11, 70);
-            this.CPUKeyHeaderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CPUKeyHeaderLabel.Location = new System.Drawing.Point(16, 108);
             this.CPUKeyHeaderLabel.Name = "CPUKeyHeaderLabel";
-            this.CPUKeyHeaderLabel.Size = new System.Drawing.Size(53, 13);
+            this.CPUKeyHeaderLabel.Size = new System.Drawing.Size(76, 20);
             this.CPUKeyHeaderLabel.TabIndex = 7;
             this.CPUKeyHeaderLabel.Text = "CPU Key:";
             // 
             // ConnectionStatusLabel
             // 
             this.ConnectionStatusLabel.AutoSize = true;
-            this.ConnectionStatusLabel.Location = new System.Drawing.Point(11, 51);
-            this.ConnectionStatusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ConnectionStatusLabel.Location = new System.Drawing.Point(16, 78);
             this.ConnectionStatusLabel.Name = "ConnectionStatusLabel";
-            this.ConnectionStatusLabel.Size = new System.Drawing.Size(79, 13);
+            this.ConnectionStatusLabel.Size = new System.Drawing.Size(116, 20);
             this.ConnectionStatusLabel.TabIndex = 8;
             this.ConnectionStatusLabel.Text = "Not Connected";
             // 
             // ConsoleDebugIPLabel
             // 
-            this.ConsoleDebugIPLabel.Location = new System.Drawing.Point(332, 70);
-            this.ConsoleDebugIPLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ConsoleDebugIPLabel.Location = new System.Drawing.Point(498, 108);
             this.ConsoleDebugIPLabel.Name = "ConsoleDebugIPLabel";
-            this.ConsoleDebugIPLabel.Size = new System.Drawing.Size(253, 14);
+            this.ConsoleDebugIPLabel.Size = new System.Drawing.Size(380, 22);
             this.ConsoleDebugIPLabel.TabIndex = 9;
             this.ConsoleDebugIPLabel.Text = "Console Debug IP: 192.168.1.1";
             this.ConsoleDebugIPLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // MemoryViewHexBox
+            // 
+            this.MemoryViewHexBox.ColumnInfoVisible = true;
+            this.MemoryViewHexBox.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryViewHexBox.LineInfoVisible = true;
+            this.MemoryViewHexBox.Location = new System.Drawing.Point(10, 10);
+            this.MemoryViewHexBox.Name = "MemoryViewHexBox";
+            this.MemoryViewHexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.MemoryViewHexBox.Size = new System.Drawing.Size(837, 540);
+            this.MemoryViewHexBox.StringViewVisible = true;
+            this.MemoryViewHexBox.TabIndex = 0;
+            this.MemoryViewHexBox.UseFixedBytesPerLine = true;
+            this.MemoryViewHexBox.VScrollBarVisible = true;
+            // 
+            // MemoryAddressTextBox
+            // 
+            this.MemoryAddressTextBox.Location = new System.Drawing.Point(125, 554);
+            this.MemoryAddressTextBox.Name = "MemoryAddressTextBox";
+            this.MemoryAddressTextBox.Size = new System.Drawing.Size(205, 26);
+            this.MemoryAddressTextBox.TabIndex = 1;
+            // 
+            // MemoryAddressLabel
+            // 
+            this.MemoryAddressLabel.AutoSize = true;
+            this.MemoryAddressLabel.Location = new System.Drawing.Point(32, 558);
+            this.MemoryAddressLabel.Name = "MemoryAddressLabel";
+            this.MemoryAddressLabel.Size = new System.Drawing.Size(68, 20);
+            this.MemoryAddressLabel.TabIndex = 2;
+            this.MemoryAddressLabel.Text = "Address";
+            // 
+            // MemorySizeLabel
+            // 
+            this.MemorySizeLabel.AutoSize = true;
+            this.MemorySizeLabel.Location = new System.Drawing.Point(355, 558);
+            this.MemorySizeLabel.Name = "MemorySizeLabel";
+            this.MemorySizeLabel.Size = new System.Drawing.Size(40, 20);
+            this.MemorySizeLabel.TabIndex = 4;
+            this.MemorySizeLabel.Text = "Size";
+            // 
+            // MemorySizeTextBox
+            // 
+            this.MemorySizeTextBox.Location = new System.Drawing.Point(403, 554);
+            this.MemorySizeTextBox.Name = "MemorySizeTextBox";
+            this.MemorySizeTextBox.Size = new System.Drawing.Size(130, 26);
+            this.MemorySizeTextBox.TabIndex = 3;
+            // 
+            // PeekMemoryButton
+            // 
+            this.PeekMemoryButton.Location = new System.Drawing.Point(563, 553);
+            this.PeekMemoryButton.Name = "PeekMemoryButton";
+            this.PeekMemoryButton.Size = new System.Drawing.Size(129, 34);
+            this.PeekMemoryButton.TabIndex = 5;
+            this.PeekMemoryButton.Text = "Peek";
+            this.PeekMemoryButton.UseVisualStyleBackColor = true;
+            this.PeekMemoryButton.Click += new System.EventHandler(this.PeekMemoryButton_Click);
+            // 
+            // PokeMemoryButton
+            // 
+            this.PokeMemoryButton.Location = new System.Drawing.Point(713, 553);
+            this.PokeMemoryButton.Name = "PokeMemoryButton";
+            this.PokeMemoryButton.Size = new System.Drawing.Size(129, 34);
+            this.PokeMemoryButton.TabIndex = 6;
+            this.PokeMemoryButton.Text = "Poke";
+            this.PokeMemoryButton.UseVisualStyleBackColor = true;
+            this.PokeMemoryButton.Click += new System.EventHandler(this.PokeMemoryButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 502);
+            this.ClientSize = new System.Drawing.Size(892, 772);
             this.Controls.Add(this.ConsoleDebugIPLabel);
             this.Controls.Add(this.ConnectionStatusLabel);
             this.Controls.Add(this.CPUKeyHeaderLabel);
@@ -770,7 +867,6 @@
             this.Controls.Add(this.RebootButton);
             this.Controls.Add(this.ConnectButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Xbox 360 Toolbox by Matrix";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -780,10 +876,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.FunctionsTab.ResumeLayout(false);
             this.FunctionsTab.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.PPCTab.ResumeLayout(false);
             this.PPCTab.PerformLayout();
+            this.MemoryTab.ResumeLayout(false);
+            this.MemoryTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -849,8 +949,21 @@
         private System.Windows.Forms.Label OrdinalLabel;
         private System.Windows.Forms.TextBox ByOridinalReturnValueTextBox;
         private System.Windows.Forms.Button CallByOrdinalButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CallByOrdinalReturnTypeComboBox;
         private System.Windows.Forms.Label ByOrdinalReturnLabel;
+        private System.Windows.Forms.TextBox CallAddressTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox CallAddressReturnTextBox;
+        private System.Windows.Forms.Button CallFunctionButton;
+        private System.Windows.Forms.ComboBox CallByAddressReturnType;
+        private System.Windows.Forms.Label label2;
+        private Be.Windows.Forms.HexBox MemoryViewHexBox;
+        private System.Windows.Forms.Label MemorySizeLabel;
+        private System.Windows.Forms.TextBox MemorySizeTextBox;
+        private System.Windows.Forms.Label MemoryAddressLabel;
+        private System.Windows.Forms.TextBox MemoryAddressTextBox;
+        private System.Windows.Forms.Button PokeMemoryButton;
+        private System.Windows.Forms.Button PeekMemoryButton;
     }
 }
 

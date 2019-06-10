@@ -14,5 +14,11 @@
     <Setting Name="InjectAddress" Type="System.String" Scope="User">
       <Value Profile="(Default)">0x0</Value>
     </Setting>
+    <Setting Name="MemAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0x82000000</Value>
+    </Setting>
+    <Setting Name="MemSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0x1000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

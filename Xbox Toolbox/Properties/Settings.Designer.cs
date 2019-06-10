@@ -70,5 +70,29 @@ namespace Xbox_Toolbox.Properties {
                 this["InjectAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0x82000000")]
+        public string MemAddress {
+            get {
+                return ((string)(this["MemAddress"]));
+            }
+            set {
+                this["MemAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0x1000")]
+        public string MemSize {
+            get {
+                return ((string)(this["MemSize"]));
+            }
+            set {
+                this["MemSize"] = value;
+            }
+        }
     }
 }

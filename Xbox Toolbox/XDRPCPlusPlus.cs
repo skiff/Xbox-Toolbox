@@ -167,7 +167,6 @@ namespace Xbox_Toolbox {
 
         public static string GetCPUKey(this IXboxConsole xbCon) {
             byte[] RPC = new byte[] { 0x38, 0x00, 0x00, 0x71, 0x44, 0x00, 0x00, 0x02, 0x4E, 0x80, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00 };
-            XDRPCReference Call = xbCon.AllocateRPC(16);
 
             xbCon.DebugTarget.SetMemory(0x81B44688, 16, RPC, out outInt);
             UInt64 CPU1 = xbCon.ExecuteRPC<UInt64>(new XDRPCExecutionOptions(XDRPCMode.Title, 0x81B44688), new object[] { 0x48565050, 3, 0x8000020000020600 });
